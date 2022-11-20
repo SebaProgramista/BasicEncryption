@@ -1,0 +1,67 @@
+﻿<Window x:Class="Szyfrator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Szyfrator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <!-- Stack Panel with encrypt UI -->
+        <StackPanel x:Name="stack_encrypt" Grid.Row="0" Grid.Column="0" Margin="10 10 10 10">
+            <StackPanel>
+                <!-- Text to encrypt -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0">Tekst:</Label>
+                    <TextBox x:Name="txtbox_text_to_encrypt" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                </Grid>
+                <!-- Button to encrypt text -->
+                <Button Content="Zaszyfruj wiadomość" Click="Btn_Encrypt"></Button>
+            </StackPanel>
+            <StackPanel Visibility="Collapsed">
+                <!-- Label with decrypted text -->
+                <Label x:Name="lbl_decrypted_text"></Label>
+                <!-- Button to save encrypted text -->
+                <Button Content="Zapisz zaszyfrowaną wiadomość" Click="Encrypt_Btn_Save" Margin="0 0 0 3"></Button>
+                <!-- Button to back -->
+                <Button Content="Wróć" Click="Encrypt_Btn_Back"></Button>
+            </StackPanel>
+        </StackPanel>
+        <!-- Stack Panel with decrypt UI -->
+        <StackPanel x:Name="stack_decrypt" Grid.Row="1" Grid.Column="0" Margin="10 10 10 10">
+            <StackPanel>
+                <!-- Text to decrypt -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0">Tekst:</Label>
+                    <TextBox x:Name="decrypt_lbl_text_to_decrypt" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                </Grid>
+                <!-- Key to decrypt text -->
+                <!-- <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0">Klucz:</Label>
+                    <TextBox Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                </Grid> -->
+                <!-- Button to decrypt text -->
+                <Button Content="Odszyfruj wiadomość" Click="Btn_Decrypt"></Button>
+            </StackPanel>
+            <StackPanel Visibility="Collapsed">
+                <Label x:Name="lbl_encrypted_text"></Label>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
