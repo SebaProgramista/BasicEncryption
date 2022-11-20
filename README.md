@@ -1,5 +1,5 @@
-# Allegro scrapper
-A program written in Python that scrapes product data from the allegro.pl
+# BasicEncryption
+A WPF program that encrypts messages and allows you to decrypt them
 
 ###### Status: Not complete
 ###### Version: 0.1
